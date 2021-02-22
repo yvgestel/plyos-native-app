@@ -4,30 +4,36 @@ import { Preview } from '../atoms/Preview';
 
 import Image from '../../assets/oefening1.jpg';
 
-export const Previewbar = ({name, navigation}) => {
-    
-    return (
-        <View>
-            <View style={styles.previewInfo}>
-                <Text style={styles.infoTitle}>{name}</Text>
-            </View>
-            <View style={styles.previewBar}>
-                <ScrollView style={styles.scrollView} horizontal={true} showsHorizontalScrollIndicator={false} >
+export const Previewbar = ({navigation, training}) => {
+    //console.log(training.exercises)
+    const renderExercises = () => {
+        return (
+            training.exercises.map((exercise)=>{
+                console.log(exercise.name)
+                return (
                     <Preview 
+                        key={exercise.id}
                         image={Image} 
                         id='1' 
                         navigation={navigation}
+                        title={exercise.name}
                     />
-                    <Preview 
-                        image={Image} 
-                        id='2' 
-                        navigation={navigation}
-                    />
-                    <Preview 
-                        image={Image} 
-                        id='3' 
-                        navigation={navigation}
-                    />
+                )
+            })
+        )
+    }
+    return (
+        <View>
+            <View style={styles.previewInfo}>
+                <Text style={styles.infoTitle}>{training.name}</Text>
+            </View>
+            <View style={styles.previewBar}>
+                <ScrollView style={styles.scrollView} horizontal={true} showsHorizontalScrollIndicator={false} >
+                    { training.exercises.length<1 ?
+                        <Text>No training found</Text>
+                        :
+                        renderExercises()
+                    }
                 </ScrollView>
             </View>
         </View>

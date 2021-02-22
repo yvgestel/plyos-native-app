@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View, ScrollView } from 'react-native';
 
 import { Navbar } from '../../components/organismes/navbar/Navbar';
 import { Background } from '../../components/atoms/Background';
 import { Previewbar } from '../../components/molecules/Previewbar';
+import { UserContext } from '../../context/UserContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import DatabaseHelper from '../../helpers/Database';
 
 export const MyTrainingScreen = ({ navigation }) => {
+    const [allTrainings, setAllTrainings] = useState([]);
+    const { user } = useContext(UserContext);
+
+    const db = new DatabaseHelper();
+
+    if (!user){
+        navigation.navigate("Login")
+    }
+
+    useEffect(() => {
+        async function fetchData() {
+            const token = await AsyncStorage.getItem('@plyosToken')
+            const id = await AsyncStorage.getItem('@plyosUser')
+            const [response, error] = await db.privateFetch(`/training/${id}`, token)
+            if (response.data) {
+                setAllTrainings(response.data)
+            }
+        } 
+        fetchData()
+    },[])
+
     return (
         <View>
             <Navbar navigation={navigation} />
@@ -14,23 +38,24 @@ export const MyTrainingScreen = ({ navigation }) => {
                     <View style={styles.container}>
                         <Text style={styles.header}>
                             MyTraining
-                        </Text>       
-                        <SafeAreaView>
-                            <ScrollView showsVerticalScrollIndicator={false}>
-                                <Previewbar 
-                                    name="Training 1"
-                                    navigation={navigation}
-                                />
-                                <Previewbar 
-                                    name="Training 2"
-                                    navigation={navigation}
-                                />
-                                <Previewbar 
-                                    name="Training 3"
-                                    navigation={navigation}
-                                />
-                            </ScrollView>
-                        </SafeAreaView>
+                        </Text>  
+                            {!allTrainings ?
+                            <Text>No training found</Text>
+                            :
+                            <SafeAreaView>
+                                <ScrollView showsVerticalScrollIndicator={false}>
+                                    {allTrainings.map((training) => {
+                                        return (
+                                            <Previewbar 
+                                                key={training.id}
+                                                navigation={navigation}
+                                                training={training}
+                                            />
+                                        )
+                                    })}
+                                </ScrollView>
+                            </SafeAreaView>
+                            }     
                     </View>
                 </Background>
             </View>

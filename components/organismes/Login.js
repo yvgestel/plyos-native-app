@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-//import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StyleSheet, View } from 'react-native';
 
 import DatabaseHelper from '../../helpers/Database';
@@ -8,11 +8,13 @@ import DatabaseHelper from '../../helpers/Database';
 import { Navbar } from './navbar/Navbar';
 import { Input } from '../atoms/Input';
 import { Button } from '../atoms/Button';
+import { UserContext } from '../../context/UserContext';
 
 export const Login = ({ login, navigation }) => {
     const {control, handleSubmit, errors} = useForm();
+    const { logInUser } = useContext(UserContext)
 
-    db = new DatabaseHelper();
+    const db = new DatabaseHelper();
 
     const onSubmit = async ({email, password}) => {
         const user = {
@@ -21,19 +23,21 @@ export const Login = ({ login, navigation }) => {
         };
 
         const [response, error] = await db.logIn(user);
-        console.log(response)
-        // if (response) {
-        //     try {
-        //         const userKey = ['@plyosUser', email];
-        //         const userToken = ['@plyosToken', email];
-        //         await AsyncStorage.multiSet([userKey, userToken]);
-        //     } catch (err) {
-        //         console.log(err)
-        //     }
+        if (response) {
+            try {
+                console.log(response)
+                const userKey = ['@plyosUser', response.id];
+                const userToken = ['@plyosToken', response.token];
+                await AsyncStorage.multiSet([userKey, userToken]);
+                logInUser();
+                navigation.navigate("Home");
+            } catch (err) {
+                console.log(err)
+            }
 
-        // } else {
-        //   console.log(error)
-        // }
+        } else {
+          console.log(error)
+        }
     };
 
     return (

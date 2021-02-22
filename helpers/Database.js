@@ -1,7 +1,7 @@
 import Axios from 'axios';
 export default class DatabaseHelper {
     constructor(){
-        this.baseURL = "http://192.168.1.103:3000";
+        this.baseURL = "https://plyos-api.herokuapp.com";
     };
 
     async logIn (user) {

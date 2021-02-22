@@ -1,21 +1,26 @@
-import React from 'react';
-//import AsyncStorage from '@react-native-async-storage/async-storage'
+import React, { useContext } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { StyleSheet, View } from 'react-native';
 
 import { Navbar } from './navbar/Navbar';
 import { Background } from '../atoms/Background';
 import { Input } from '../atoms/Input';
 import { Button } from '../atoms/Button'
+import { UserContext } from '../../context/UserContext';
 
 export const Profile = ({ navigation }) => {
-//     const logOut = async () => {
-//         console.log("Logout")
-//         try {
-//             await AsyncStorage.multiRemove(['@plyosUser', '@plyosToken'])
-//         } catch (err) {
-//             console.log(err)
-//         }
-//     }
+    const { logOutUser } = useContext(UserContext);
+
+    const logOut = async () => {
+        console.log("Logout")
+        try {
+            await AsyncStorage.multiRemove(['@plyosUser', '@plyosToken', '@plyosId']);
+            logOutUser();
+        } catch (err) {
+            console.log(err);
+        }
+        navigation.navigate("Home")
+    }
 
     const changePassword = () => {
         console.log("Change password")

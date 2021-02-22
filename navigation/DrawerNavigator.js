@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext } from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import { HomeScreen } from '../screens/HomeScreen';
@@ -6,11 +6,13 @@ import { LoginScreen } from '../screens/LoginScreen';
 import { ContactScreen } from '../screens/ContactScreen';
 import { TrainingNavigator } from '../screens/Training/TrainingNavigator';
 import { BlogNavigator } from '../screens/Blog/BlogNavigator';
+import { UserContext } from '../context/UserContext';
 
 const Drawer = createDrawerNavigator();
 
 export const DrawerNavigator = () => {
-    const loginScreenName = false ? "Profile" : "Login"
+    const { user } = useContext(UserContext)
+    const logInScreenName = user ? "Profile" : "Login"
 
     return (
         <Drawer.Navigator
@@ -33,7 +35,7 @@ export const DrawerNavigator = () => {
                 component={ContactScreen}
             />
             <Drawer.Screen 
-                name={loginScreenName}
+                name={logInScreenName}
                 component={LoginScreen}
             />
         </Drawer.Navigator>

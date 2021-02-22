@@ -1,35 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { View } from 'react-native';
-//import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import { Profile } from '../components/organismes/Profile';
 import { Login } from '../components/organismes/Login';
+import { UserContext } from '../context/UserContext';
 
 export const LoginScreen = ({ navigation }) => {
-    const [loggedIn, setLoggedIn] = useState(false);
-
-    // useEffect (() => {
-    //     async function checkForUser() {
-    //         try {
-    //             const token = await AsyncStorage.getItem('@plyosToken')
-    //             if (token) { 
-    //                 setLoggedIn(true)
-    //             }
-    //         } catch (error) {
-    //             console.log(error)
-    //         }
-    //     } 
-    //     checkForUser()
-    // },[])
+    const { user } = useContext(UserContext);
 
     return (
         <View>
         {
-            loggedIn 
+            user 
             ?
-                <Profile navigation={navigation} />
+                <Profile navigation={navigation}  />
             :
-                <Login login={setLoggedIn} navigation={navigation} />
+                <Login navigation={navigation} />
 
         }
         </View>
