@@ -1,5 +1,6 @@
 import React from 'react';
 import { View,Text, StyleSheet } from 'react-native';
+import { Colors } from '../../styles/Colors';
 
 export const Background = ({ children, color }) => {
     return (
@@ -16,7 +17,7 @@ export const Background = ({ children, color }) => {
 
 const styles = StyleSheet.create({
     bgContainer: { 
-        backgroundColor: '#FFFAFF',
+        backgroundColor: Colors.white.default,
         justifyContent: 'flex-end',
         paddingTop: 20,
     },
@@ -29,9 +30,9 @@ const styles = StyleSheet.create({
         zIndex: -1,
     },
     bgOrange: {
-        backgroundColor: '#D8A664',
+        backgroundColor: Colors.orange.default,
     },
     bgGreen: {
-        backgroundColor: '#99D7B1',
+        backgroundColor: Colors.green.default,
     },
 })

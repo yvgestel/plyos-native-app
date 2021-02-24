@@ -6,6 +6,7 @@ import DatabaseHelper from '../../helpers/Database';
 
 import { Background } from '../../components/atoms/Background';
 import { Navbar } from '../../components/organismes/navbar/Navbar';
+import { Loading } from '../../components/atoms/Loading';
 
 export const BlogIDScreen = ({ route, navigation }) => {
     const { blog } = route.params;
@@ -23,7 +24,7 @@ export const BlogIDScreen = ({ route, navigation }) => {
     return (
         currentBlog.length===0 
         ?
-            <Text>Loading..</Text>
+            <Loading />
         :
             <View >
                 <Navbar navigation={navigation} />
@@ -32,7 +33,7 @@ export const BlogIDScreen = ({ route, navigation }) => {
                             <Image 
                                 style={styles.blogImage} 
                                 source={{
-                                    uri: "http://192.168.1.103:3000/uploads/blog-talentontwikkeling-wat-zegt-wetenschappelijk-onderzoek.jpeg",
+                                    uri: currentBlog.blogImage,
                                 }}
                             />
                             <SafeAreaView style={styles.markdown}>

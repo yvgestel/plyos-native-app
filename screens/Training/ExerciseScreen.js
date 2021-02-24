@@ -23,7 +23,7 @@ export const ExerciseScreen = ({ navigation, route }) => {
     return (
         !currentExercise
         ?
-            <Text>Loading..</Text>
+            <Loading />
         :
             <View>
                 <Navbar navigation={navigation} />

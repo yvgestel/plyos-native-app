@@ -2,9 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 export const Blogpost = ({ blogId, title, blogImage, date, navigation}) => {
-    
    const goToBlogIdPage = () => {
-        console.log(blogId)
         navigation.navigate('BlogID', {
             blog: {blogId}    
         })
@@ -18,7 +16,7 @@ export const Blogpost = ({ blogId, title, blogImage, date, navigation}) => {
             <Image 
                 style={styles.blogImage} 
                 source={{
-                    uri: "http://192.168.1.103:3000/uploads/blog-talentontwikkeling-wat-zegt-wetenschappelijk-onderzoek.jpeg",
+                    uri: blogImage,
                 }}
             />
             <View style={styles.blogBg}>

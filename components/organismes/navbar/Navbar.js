@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableHighlight, TouchableOpacity } from 're
 import SvgLogo from '../../../assets/icons/plyos-logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Colors } from '../../../styles/Colors';
 
 export const Navbar = ({ navigation }) => {
     return (
@@ -26,7 +27,7 @@ export const Navbar = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     headerContainer: {
-        backgroundColor: '#FFFAFF',
+        backgroundColor: Colors.white.default,
         height: 165,
         flexDirection: 'row',
         justifyContent: 'space-between',

@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextInput, StyleSheet, View, Text } from 'react-native';
 import { Controller } from 'react-hook-form';
+import { Colors } from '../../styles/Colors';
 
 export const Input = ({placeholder, control, name, secure, error}) => {
     
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
     inputField: {
         width: 300,
         height: 60,
-        backgroundColor: '#FFFAFF',
+        backgroundColor: Colors.white.default,
         padding: 20,
         margin: 20,
         borderRadius: 30,

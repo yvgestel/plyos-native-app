@@ -14,10 +14,6 @@ export const MyTrainingScreen = ({ navigation }) => {
 
     const db = new DatabaseHelper();
 
-    if (!user){
-        navigation.navigate("Login")
-    }
-
     useEffect(() => {
         async function fetchData() {
             const token = await AsyncStorage.getItem('@plyosToken')
@@ -27,6 +23,9 @@ export const MyTrainingScreen = ({ navigation }) => {
                 setAllTrainings(response.data)
             }
         } 
+        if (!user){
+            navigation.navigate("Login")
+        }
         fetchData()
     },[])
 

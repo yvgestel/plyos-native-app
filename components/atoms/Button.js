@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { color } from 'react-native-reanimated';
+import { Colors } from '../../styles/Colors';
 
 export const Button = ({label, onPress, btn, color }) => {
     return (
@@ -44,10 +44,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     btnOrange: {
-        backgroundColor: '#D8A664',
+        backgroundColor: Colors.orange.default,
     },
     btnGreen: {
-        backgroundColor: '#99D7B1',
+        backgroundColor: Colors.green.default,
     },
     buttonText: {
         textAlign: 'center',

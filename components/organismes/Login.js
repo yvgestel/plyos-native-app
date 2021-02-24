@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
 import DatabaseHelper from '../../helpers/Database';
 
@@ -9,10 +9,12 @@ import { Navbar } from './navbar/Navbar';
 import { Input } from '../atoms/Input';
 import { Button } from '../atoms/Button';
 import { UserContext } from '../../context/UserContext';
+import { faBold } from '@fortawesome/free-solid-svg-icons';
 
 export const Login = ({ login, navigation }) => {
     const {control, handleSubmit, errors} = useForm();
     const { logInUser } = useContext(UserContext)
+    const [loginError, setLoginError] = useState([]);
 
     const db = new DatabaseHelper();
 
@@ -25,7 +27,7 @@ export const Login = ({ login, navigation }) => {
         const [response, error] = await db.logIn(user);
         if (response) {
             try {
-                console.log(response)
+                setLoginError(null)
                 const userKey = ['@plyosUser', response.id];
                 const userToken = ['@plyosToken', response.token];
                 await AsyncStorage.multiSet([userKey, userToken]);
@@ -37,6 +39,7 @@ export const Login = ({ login, navigation }) => {
 
         } else {
           console.log(error)
+          setLoginError("Combinatie van e-mail en wachtwoord is onbekend.")
         }
     };
 
@@ -65,6 +68,7 @@ export const Login = ({ login, navigation }) => {
                         btn="btn-primary"
                         color="orange" 
                     />
+                    {loginError && <Text style={styles.errorMessage}>{loginError}</Text>}
                 </View>
             </View>
         </View>
@@ -86,5 +90,11 @@ const styles = StyleSheet.create({
         marginTop: 75,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    errorMessage: {
+        padding: 10,
+        textAlign: 'center',
+        lineHeight: 20,
+        fontWeight: 'bold',
     }
 })
