@@ -2,19 +2,16 @@ import React from 'react';
 import { ScrollView, StyleSheet, View, Text } from 'react-native';
 import { Preview } from '../atoms/Preview';
 
-import Image from '../../assets/oefening1.jpg';
-
 export const Previewbar = ({navigation, training}) => {
-    //console.log(training.exercises)
     const renderExercises = () => {
         return (
             training.exercises.map((exercise)=>{
-                console.log(exercise.name)
+                console.log(exercise.exerciseImage)
                 return (
                     <Preview 
-                        key={exercise.id}
-                        image={Image} 
-                        id='1' 
+                        key={exercise._id}
+                        image={exercise.exerciseImage} 
+                        id={exercise._id} 
                         navigation={navigation}
                         title={exercise.name}
                     />

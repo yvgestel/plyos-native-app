@@ -1,31 +1,44 @@
-# Getting Started with Plyos-native-app
+# Plyos-native-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+De Plyos native app is een uitbreiding op de plyos webapplicatie. De mobiele variant is te gebruiken door zowel niet-geregistreerde als geregistreerde bezoekers. In de native app kunnen gebruikers blogs lezen, contact formulieren versturen en inloggen op hun account. Eenmaal ingelogd kunnen de bezoekers ook hun gemaakte trainingen inzien.
 
-## Available Scripts
+### Homepage
+![HomeScreen](./assets/screens/home-screen.jpg)
+### Training
+![TrainingScreen](./assets/screens/home-screen.jpg)
+### Login
+![LoginScreen](./assets/screens/home-screen.jpg)
+### Blogs
+![BlogScreen](./assets/screens/home-screen.jpg)
 
-In the project directory, you can run:
+## Benodigdheden
+Naast een editor en een terminal zijn er geen benodigdheden vereist om met dit project aan de slag te kunnen. 
+
+## Installatie
+Nadat het project van Github is gecloned naar een lokale map, is er slechts één stap nodig voordat het gestart kan worden:
+npm install
+
+## Gebruikers
+Om in te loggen kan via de webapplicatie een gebruiker worden aangemaakt. Tevens kan gebruik worden gemaakt van een aantal testgebruikers:
+Email: gebruiker1@test.nl        Wachtwoord: 1234Qwer
+Email: gebruiker2@test.nl        Wachtwoord: 1234Qwer
+Email: gebruiker3@test.nl        Wachtwoord: 1234Qwer
+
+## Beschikbare scripts
+In dit project zijn drie scripts standaard beschikbaar. Deze zullen hieronder toegelicht worden.
 
 ### `expo start`
+Met dit script wordt het project gestart. Automatisch worden de Expo DevTools gestart. Vanuit hier kan gekozen worden via welk platform de applicatie geopend wordt. Als alternatief voor 'expo start' kan ook gekozen worden voor de volgende scripts:
+#### `android`
+Om het project op andriod te openen.
+#### `ios`
+Om het project op iOS te starten.
+#### `web`
+Niet aangeraden. Start het project in een webbrowser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `npm test`
+Kan gebruikt worden om de applicatie te testen. In de huidige versie zijn echter geen test opgenomen. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
+### `expo eject`
+Wanneer de ontwikkelaar niet met expo wil werken, kan dit commanda gebruikt worden om de applicatie verder te ontwikkelen zonder expo.
+Hiermee verliest de programmeur voordelen als het automatisch linken van libaries. 

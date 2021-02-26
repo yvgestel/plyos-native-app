@@ -20,7 +20,7 @@ export const Login = ({ login, navigation }) => {
 
     const onSubmit = async ({email, password}) => {
         const user = {
-          email: email,
+          email: email.trim(),
           password: password
         };
 

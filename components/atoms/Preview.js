@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, Image } from 'react-native';
 
-export const Preview = ({image, title, id, navigation}) => {
+export const Preview = ({image, id, navigation}) => {
     const goToExerciseIdPage = () => {
         navigation.navigate('ExerciseID', {
             trainingId: {id}    

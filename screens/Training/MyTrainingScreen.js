@@ -46,7 +46,7 @@ export const MyTrainingScreen = ({ navigation }) => {
                                     {allTrainings.map((training) => {
                                         return (
                                             <Previewbar 
-                                                key={training.id}
+                                                key={training._id}
                                                 navigation={navigation}
                                                 training={training}
                                             />
