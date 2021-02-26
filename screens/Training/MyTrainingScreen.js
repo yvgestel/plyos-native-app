@@ -39,7 +39,7 @@ export const MyTrainingScreen = ({ navigation }) => {
                             MyTraining
                         </Text>  
                             {!allTrainings ?
-                            <Text>No training found</Text>
+                            <Text>No training found. Visit the website to create one.</Text>
                             :
                             <SafeAreaView>
                                 <ScrollView showsVerticalScrollIndicator={false}>

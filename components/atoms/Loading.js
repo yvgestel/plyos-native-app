@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-export const Loading = ({ navigation }) => {
+export const Loading = ({ navigation, errorMessage }) => {
+
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
                 Loading...
             </Text>
+            {errorMessage && <Text style={styles.text}>{errorMessage}</Text>}
         </View> 
     );
 }

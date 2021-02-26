@@ -38,8 +38,12 @@ export const Login = ({ login, navigation }) => {
             }
 
         } else {
-          console.log(error)
-          setLoginError("Combinatie van e-mail en wachtwoord is onbekend.")
+          if(error.response.status==401) {
+            setLoginError("Combinatie van e-mail en wachtwoord is onbekend.")
+          } else {
+            setLoginError("There is an error on the server. Try again later.") 
+          }
+          
         }
     };
 

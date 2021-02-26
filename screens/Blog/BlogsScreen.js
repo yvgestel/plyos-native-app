@@ -10,12 +10,17 @@ import { Loading } from '../../components/atoms/Loading';
 
 export const BlogsScreen = ({ navigation }) => {
     const [blogs, setBlogs] = useState(null)
+    const [errorMessage, setErrorMessage] = useState(null)
 
     const db = new DatabaseHelper()
     useEffect (() => {
         async function fetchData() {
+            setErrorMessage(null)
             const [response, error] = await db.fetch("/blog")
             setBlogs(response.data)
+            if(error) {
+                setErrorMessage("There is an error on the server. Try again later.")
+            }
         } 
         fetchData()
     },[])
@@ -23,7 +28,7 @@ export const BlogsScreen = ({ navigation }) => {
     return (
         !blogs
         ?
-            <Loading />
+            <Loading error={errorMessage}/>
         :
             <View>
                 <Navbar navigation={navigation} />
