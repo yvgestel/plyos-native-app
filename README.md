@@ -20,9 +20,9 @@ npm install
 
 ## Gebruikers
 Om in te loggen kan via de webapplicatie een gebruiker worden aangemaakt. Tevens kan gebruik worden gemaakt van een aantal testgebruikers:  
-Email: gebruiker1@test.nl        Wachtwoord: 1234Qwer  
-Email: gebruiker2@test.nl        Wachtwoord: 1234Qwer  
-Email: gebruiker3@test.nl        Wachtwoord: 1234Qwer  
+Email: gebruiker1@test.nl    -      Wachtwoord: 1234Qwer  
+Email: gebruiker2@test.nl    -      Wachtwoord: 1234Qwer  
+Email: gebruiker3@test.nl    -      Wachtwoord: 1234Qwer  
 
 ## Beschikbare scripts
 In dit project zijn drie scripts standaard beschikbaar. Deze zullen hieronder toegelicht worden.
