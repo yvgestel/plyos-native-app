@@ -19,7 +19,7 @@ Nadat het project van Github is gecloned naar een lokale map, is er slechts éé
 npm install
 
 ## Gebruikers
-Om in te loggen kan via de webapplicatie een gebruiker worden aangemaakt. Tevens kan gebruik worden gemaakt van een aantal testgebruikers:
+Om in te loggen kan via de webapplicatie een gebruiker worden aangemaakt. Tevens kan gebruik worden gemaakt van een aantal testgebruikers:  
 Email: gebruiker1@test.nl        Wachtwoord: 1234Qwer  
 Email: gebruiker2@test.nl        Wachtwoord: 1234Qwer  
 Email: gebruiker3@test.nl        Wachtwoord: 1234Qwer  
