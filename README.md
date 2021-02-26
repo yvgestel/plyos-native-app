@@ -5,24 +5,24 @@ De Plyos native app is een uitbreiding op de plyos webapplicatie. De mobiele var
 ### Homepage
 ![HomeScreen](./assets/screens/home-screen.jpg)
 ### Training
-![TrainingScreen](./assets/screens/home-screen.jpg)
+![TrainingScreen](./assets/screens/training-screen.jpg)
 ### Login
-![LoginScreen](./assets/screens/home-screen.jpg)
+![LoginScreen](./assets/screens/login-screen.jpg)
 ### Blogs
-![BlogScreen](./assets/screens/home-screen.jpg)
+![BlogScreen](./assets/screens/blog-screen.jpg)
 
 ## Benodigdheden
 Naast een editor en een terminal zijn er geen benodigdheden vereist om met dit project aan de slag te kunnen. 
 
 ## Installatie
-Nadat het project van Github is gecloned naar een lokale map, is er slechts één stap nodig voordat het gestart kan worden:
+Nadat het project van Github is gecloned naar een lokale map, is er slechts één stap nodig voordat het gestart kan worden:  
 npm install
 
 ## Gebruikers
 Om in te loggen kan via de webapplicatie een gebruiker worden aangemaakt. Tevens kan gebruik worden gemaakt van een aantal testgebruikers:
-Email: gebruiker1@test.nl        Wachtwoord: 1234Qwer
-Email: gebruiker2@test.nl        Wachtwoord: 1234Qwer
-Email: gebruiker3@test.nl        Wachtwoord: 1234Qwer
+Email: gebruiker1@test.nl        Wachtwoord: 1234Qwer  
+Email: gebruiker2@test.nl        Wachtwoord: 1234Qwer  
+Email: gebruiker3@test.nl        Wachtwoord: 1234Qwer  
 
 ## Beschikbare scripts
 In dit project zijn drie scripts standaard beschikbaar. Deze zullen hieronder toegelicht worden.
