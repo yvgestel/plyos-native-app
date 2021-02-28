@@ -2,7 +2,7 @@
     <defs>
         <style>
             .polygon{fill:#46bc71;stroke:#46bc71;stroke-miterlimit:10;stroke-width:2px;}
-            .text{font-size:145.05px;font-family:MyanmarText-Bold, Myanmar Text;font-weight:700;}
+            .text{font-size:145.05px;font-weight:700;}
         </style>
     </defs>
     <title>plyos-logo</title>

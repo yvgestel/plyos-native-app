@@ -21,8 +21,9 @@ export const MyTrainingScreen = ({ navigation }) => {
             const [response, error] = await db.privateFetch(`/training/${id}`, token)
             if (response.data) {
                 setAllTrainings(response.data)
-            }
+            } 
         } 
+        console.log(user)
         if (!user){
             navigation.navigate("Login")
         }

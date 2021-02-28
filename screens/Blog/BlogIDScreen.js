@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
         flex: 1
     },
     blogImage: {
-        width: 250,
-        height: 200,
+        width: '80%',
+        height: '30%',
         borderRadius: 50,
         marginTop: 200,
     },

@@ -66,6 +66,6 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     blogContainer: {
-     
+        paddingBottom: 250,
     }
 })

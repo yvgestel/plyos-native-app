@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         color: '#FFFAFF',
     },
     blogImage: {
-        width: 200,
+        width: '80%',
         height: 150,
         borderTopLeftRadius: 50,
         borderTopRightRadius: 50,

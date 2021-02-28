@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     },
     fgContainer: {
         padding: 50,
+        paddingTop: 0,
         zIndex: 1
     },
     pageHeader: {
@@ -82,6 +83,6 @@ const styles = StyleSheet.create({
         width: '100%',
         position: 'absolute',
         zIndex: 1,
-        bottom: 325,
+        bottom: '25%',
     }
 })
