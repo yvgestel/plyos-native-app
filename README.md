@@ -12,7 +12,7 @@ De Plyos native app is een uitbreiding op de plyos webapplicatie. De mobiele var
 ![BlogScreen](./assets/screens/blog-screen.jpg)
 
 ## Benodigdheden
-Naast een editor en een terminal zijn er geen benodigdheden vereist om met dit project aan de slag te kunnen. 
+Naast een editor en een terminal zijn er slechts één benodigdheid vereist om met dit project aan de slag te kunnen. Download en installeer NodeJS, volg de instructies op de [website](https://nodejs.org/en/). 
 
 ## Installatie
 Nadat het project van Github is gecloned naar een lokale map, is er slechts één stap nodig voordat het gestart kan worden:  
